@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linda Future</title>
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico"
+      type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!--- End favicon-->
+
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"> -->
+    <!-- End google font  -->
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/custom-font.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/icomoon.css">
+    
+
+    <!-- Code Editor  -->
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/custom-font.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/icomoon.css">
+
+    <!-- Code Editor  -->
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/app.min.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/app.min.css">
+     <style>
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* full viewport height for true hero feel */
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Captions */
+.carousel-caption {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  color: #ffffff;
+  max-width: 650px;
+  animation: slideInUp 1s ease-out;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.carousel-caption h2 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.carousel-caption p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  line-height: 1.5;
+}
+
+/* Dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.8rem;
+  z-index: 10;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.carousel-dot.active {
+  background: #ffffff;
+  transform: scale(1.3);
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .hero-carousel {
+    height: 90vh;
+  }
+  .carousel-caption {
+    bottom: 15%;
+    left: 5%;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-carousel {
+    height: 70vh;
+  }
+  .carousel-caption {
+    bottom: 10%;
+    left: 5%;
+  }
+  .carousel-caption h2 {
+    font-size: 2rem;
+  }
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-carousel {
+    height: 60vh;
+  }
+  .carousel-caption {
+    bottom: 8%;
+    left: 5%;
+    max-width: 95%;
+  }
+  .carousel-caption h2 {
+    font-size: 1.5rem;
+  }
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ---- Reset Header Padding/Margin ---- */
+.site-header,
+.aximo-header-section,
+#sticky-menu,
+.site-header .container,
+.navbar {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+</style>
+    <style>
+  :root{
+    --accent-1: #1877f2; /* facebook */
+    --ig-grad-from: #fd1d1d;
+    --ig-grad-mid: #fcb045;
+    --ig-grad-to: #833ab4;
+    --card-bg: #ffffff;
+    --card-radius: 14px;
+    --shadow: 0 10px 30px rgba(20,20,30,0.08);
+    --text-muted: #556;
+  }
+
+  .lf-social { padding: 56px 20px; background: #fafbfc; text-align: center; }
+  .lf-social-title{ font-size: 1.9rem; margin: 0 0 6px; font-weight:700; }
+  .lf-social-sub { color: var(--text-muted); margin-bottom: 28px; }
+
+  .lf-social-cards { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; }
+  .lf-card {
+    width: 300px; border-radius: calc(var(--card-radius) + 2px);
+    padding: 2px; /* thin gradient border */
+    background: linear-gradient(135deg, rgba(255,255,255,0.025), rgba(0,0,0,0.01));
+    box-shadow: none;
+    transition: transform .28s ease, box-shadow .28s ease;
+  }
+  .lf-card .lf-card-body{
+    background: var(--card-bg); padding:20px; border-radius: var(--card-radius); box-shadow: var(--shadow);
+  }
+  .lf-card:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(15,20,40,0.12); }
+
+  .lf-card-icon { width:70px; height:70px; margin: 0 auto 14px; display:flex; align-items:center; justify-content:center; border-radius:50%; }
+  .lf-card-icon svg{ width:36px; height:36px; display:block; }
+
+  .facebook .lf-card-icon{ background: linear-gradient(135deg, #235fa9, var(--accent-1)); }
+  .instagram .lf-card-icon{ background: linear-gradient(135deg, var(--ig-grad-from), var(--ig-grad-mid), var(--ig-grad-to)); }
+
+  .lf-card h3{ margin:0; font-size:1.1rem; }
+  .lf-handle{ margin:6px 0 12px; color:var(--text-muted); font-size:0.95rem; }
+
+  .lf-count{ display:flex; align-items:baseline; gap:8px; justify-content:center; margin-bottom:12px; color:var(--text-muted); }
+  .lf-count .count{ font-weight:700; font-size:1.05rem; color:#1e293b; }
+
+  .lf-btn{
+    display:inline-block; padding:10px 20px; border-radius:999px; text-decoration:none;
+    background: linear-gradient(45deg,#4c6ef5,#f63b89); color:white; font-weight:600;
+    transition: transform .18s ease, filter .18s ease;
+  }
+  .lf-btn:focus{ outline:3px solid rgba(59,130,246,0.18); outline-offset:3px; }
+  .lf-btn:hover{ transform: translateY(-3px); filter:brightness(1.03); }
+
+  /* responsive */
+  @media (max-width:720px){
+    .lf-social { padding:36px 16px; }
+    .lf-social-cards { gap:14px; }
+    .lf-card{ width:100%; max-width:420px; }
+  }
+
+  /* respect reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    .lf-card, .lf-btn { transition: none; transform: none; }
+  }
+</style>
+
+  </head>
+
+  <body class="light">
+
+    <div class="aximo-preloader-wrap">
+      <div class="aximo-preloader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+<!-- ===== NICE GLASS NAVBAR (DROP-IN) ===== -->
+<style>
+  :root{
+    --nav-h:72px;
+    --max:1200px;
+    --ink:#1f2937;
+    --muted:#6b7280;
+    --brand:#f50404;
+    --glass:rgba(255,255,255,.68);
+    --stroke:rgba(0,0,0,.08);
+  }
+  body{padding-top:var(--nav-h);} /* offset for fixed nav */
+
+  .lfi-nav{position:fixed; inset:0 0 auto 0; height:var(--nav-h); z-index:1000; display:flex; align-items:center; justify-content:center; pointer-events:none;}
+  .lfi-nav-inner{
+    pointer-events:auto;
+    width:min(94%,var(--max));
+    height:56px; display:flex; align-items:center; gap:14px; justify-content:space-between;
+    padding:6px 10px; border-radius:999px;
+    background:var(--glass);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    backdrop-filter: blur(12px) saturate(140%);
+    border:1px solid var(--stroke);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+    transition:height .22s ease, background .22s ease, box-shadow .22s ease, transform .22s ease;
+  }
+  .lfi-brand{display:flex; align-items:center; gap:10px}
+  .lfi-brand img{height:44px; width:auto; display:block}
+
+  .lfi-primary{display:flex; gap:6px; align-items:center}
+  .lfi-primary a{
+    display:inline-block; padding:10px 14px; border-radius:12px;
+    color:#222; font-weight:600; text-decoration:none;
+    transition:background .2s ease, color .2s ease, transform .2s ease;
+  }
+  .lfi-primary a:hover{background:rgba(0,0,0,.05); transform:translateY(-1px)}
+  .lfi-primary a[aria-current="page"]{background:#111; color:#fff}
+
+  .lfi-btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:10px 16px; border-radius:999px; font-weight:800; color:#fff; text-decoration:none;
+    background:linear-gradient(135deg, var(--brand) 0%, #ff6a6a 100%);
+    box-shadow:0 10px 22px rgba(245,4,4,.25);
+    border:1px solid rgba(245,4,4,.4);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .lfi-btn:hover{transform:translateY(-2px); box-shadow:0 16px 30px rgba(245,4,4,.35)}
+
+  /* mobile */
+  .lfi-burger{display:none; width:42px; height:42px; border-radius:12px; border:1px solid var(--stroke); background:rgba(255,255,255,.55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); cursor:pointer;}
+  .lfi-burger span,.lfi-burger::before,.lfi-burger::after{
+    content:""; display:block; width:20px; height:2px; background:#111; margin:0 auto; position:relative; top:20px; border-radius:2px;
+  }
+  .lfi-burger::before{transform:translateY(-6px)}
+  .lfi-burger::after{transform:translateY(4px)}
+
+  .lfi-drawer{
+    position:fixed; inset:var(--nav-h) 0 auto 0; z-index:999;
+    background:rgba(255,255,255,.9); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--stroke);
+    transform:translateY(-12px); opacity:0; visibility:hidden; transition:.22s ease;
+  }
+  .lfi-drawer.open{transform:none; opacity:1; visibility:visible}
+  .lfi-mobile{display:grid; gap:8px; padding:12px}
+  .lfi-mobile a{padding:12px 14px; border-radius:12px; background:rgba(0,0,0,.04); color:#111; font-weight:600; border:1px solid var(--stroke)}
+
+  /* scroll state */
+  .lfi-nav.is-scrolled .lfi-nav-inner{
+    height:52px; background:rgba(255,255,255,.9); box-shadow:0 10px 24px rgba(0,0,0,.16);
+  }
+
+  /* responsive */
+  @media (max-width:1024px){ .lfi-primary{gap:2px} }
+  @media (max-width:900px){
+    .lfi-primary,.lfi-btn{display:none}
+    .lfi-burger{display:block}
+  }
+  .no-scroll{overflow:hidden}
+</style>
+
+<header class="lfi-nav" id="lfiNav" role="banner">
+  <div class="lfi-nav-inner">
+    <a class="lfi-brand" href="index-02.html" aria-label="Linda Future Initiative">
+      <img src="assets/images/logo/LINDA-LOGO.png" alt="LFI logo">
+    </a>
+
+    <nav class="lfi-primary" aria-label="Primary">
+      <a href="index-02.html">Home</a>
+      <a href="about-us.html">About Us</a>
+      <a href="single-service.html">Programmes</a>
+      <a href="contact-us.html">Contact</a>
+    </nav>
+
+    <a class="lfi-btn" href="donate.html">Donate</a>
+    <button class="lfi-burger" id="lfiBurger" aria-label="Open menu" aria-expanded="false" aria-controls="lfiDrawer"><span></span></button>
+  </div>
+
+  <div class="lfi-drawer" id="lfiDrawer">
+    <nav class="lfi-mobile" aria-label="Mobile">
+      <a href="index-02.html">Home</a>
+      <a href="about-us.html">About Us</a>
+      <a href="single-service.html">Programmes</a>
+      <a href="contact-us.html">Contact</a>
+      <a class="lfi-btn" href="donate.html" style="margin:6px 0">Donate</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  (function(){
+    // Scroll shrink
+    const nav = document.getElementById('lfiNav');
+    const onScroll = ()=> nav.classList.toggle('is-scrolled', window.scrollY > 6);
+    onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+    // Active link (basic path match)
+    const here = location.pathname.split('/').pop() || 'index-02.html';
+    document.querySelectorAll('.lfi-primary a, .lfi-mobile a').forEach(a=>{
+      const target = a.getAttribute('href');
+      if(target && here.endsWith(target)) a.setAttribute('aria-current','page');
+    });
+
+    // Mobile drawer
+    const burger = document.getElementById('lfiBurger');
+    const drawer = document.getElementById('lfiDrawer');
+    function closeDrawer(){
+      drawer.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+      document.body.classList.remove('no-scroll');
+    }
+    burger.addEventListener('click', ()=>{
+      const open = drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('no-scroll', open);
+    });
+    drawer.addEventListener('click', e=>{
+      if(e.target.tagName === 'A') closeDrawer();
+    });
+    window.addEventListener('keydown', e=>{
+      if(e.key === 'Escape') closeDrawer();
+    });
+    window.addEventListener('resize', ()=>{
+      if(window.innerWidth > 900) closeDrawer();
+    });
+  })();
+</script>
+<!-- ===== /NAVBAR ===== -->
+
+    <!--End landex-header-section -->
+    
+    <div class="aximo-breadcrumb" 
+     style="margin-top:100px; margin-bottom:0px;  padding:10px 0; text-align:center; background-color:#fff;">
+  <div class="container">
+    <nav class="breadcrumbs" style="display:inline-block; margin:0; padding:0;">
+      <ul style="list-style:none; margin:0; padding:0; display:flex; gap:8px; justify-content:center; font-size:16px; font-weight:400;">
+        <li>
+          <a href="index-02.html" style="text-decoration:none; color:#333;">Home</a>
+        </li>
+        <li aria-current="page" style="color:#05abe8;padding:0px;" >› Contact Us</li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+
+    <!-- End breadcrumb -->
+
+    <div class="section aximo-section-padding" style="margin-top:10px; padding:10px 0;"> 
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="aximo-section-title" style="margin:0; padding:30px;">
+          <h2 style="font-size:44px; margin:0;">
+            <span class="aximo-title-animation">
+              Reach out 
+            </span>
+            to make a difference
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row with no margin at all -->
+    <div class="row" style="margin:0; align-items:stretch;">
+  
+      <!-- Image -->
+      <div class="col-lg-5 order-lg-2">
+        <div class="aximo-contact-thumb wow fadeInRight" data-wow-delay="0.1s" 
+             style="height:100%; display:flex; align-items:center;">
+          <img src="assets/images/v2/cont.jpg" alt 
+               style="width:100%; height:650px; object-fit:cover; border-radius:6px;">
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="col-lg-7">
+        <div class="aximo-main-form" style="padding:8px;">
+          <form action="#" style="display:flex; flex-direction:column; gap:6px;">
+            <div class="aximo-main-field" style="margin-bottom:3px;">
+              <label>Your name</label>
+              <input type="text" style="width:100%; padding:6px; border:1px solid #ccc; border-radius:4px;">
+            </div>
+            <div class="aximo-main-field" style="margin-bottom:3px;">
+              <label>Email Address</label>
+              <input type="email" style="width:100%; padding:6px; border:1px solid #ccc; border-radius:4px;">
+            </div>
+            <div class="aximo-main-field" style="margin-bottom:3px;">
+              <label>Phone No</label>
+              <input type="text" style="width:100%; padding:6px; border:1px solid #ccc; border-radius:4px;">
+            </div>
+            <div class="aximo-main-field" style="margin-bottom:4px;">
+              <label>Write your message here...</label>
+              <textarea name="textarea" rows="3" style="width:100%; padding:6px; border:1px solid #ccc; border-radius:4px; resize:vertical;"></textarea>
+            </div>
+            <button id="aximo-main-btn" type="submit" 
+                    style="padding:8px; border:none; border-radius:4px; cursor:pointer;">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- end section -->
+    <!-- Social Media Section -->
+    <!-- Follow Us — Premium Social Cards (Facebook + Instagram) -->
+    <section class="lf-social" aria-labelledby="lf-social-title">
+      <div class="container">
+        <h2 id="lf-social-title" class="lf-social-title">Follow Us on Social
+          Media</h2>
+        <p class="lf-social-sub">Join our community — updates, events, mental
+          health tips and ways to support Linda Future Initiative.</p>
+
+        <div class="lf-social-cards" role="list">
+          <!-- Facebook -->
+          <div class="lf-card" role="listitem" aria-labelledby="fb-title">
+            <div class="lf-card-icon facebook" aria-hidden="true">
+              <!-- inline svg -->
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path
+                  d="M22.675 0h-21.35C.6 0 0 .6 0 1.325v21.351C0 23.4.6 24 1.325 24h11.495v-9.294H9.847v-3.622h2.973V8.413c0-2.937 1.793-4.542 4.415-4.542 1.254 0 2.332.093 2.645.135v3.067l-1.815.001c-1.425 0-1.701.678-1.701 1.67v2.188h3.401l-.443 3.622h-2.958V24h5.797C23.4 24 24 23.4 24 22.676V1.325C24 .6 23.4 0 22.675 0z" />
+              </svg>
+            </div>
+
+            <div class="lf-card-body">
+              <h3 id="fb-title">Facebook</h3>
+              <p class="lf-handle">Lindafutureinitiative</p>
+
+              <!-- optional: follower count (replace data-target with real number) -->
+
+              <a class="lf-btn"
+                href="https://www.facebook.com/share/173Gcfedjq/"
+                target="_blank" rel="noopener noreferrer"
+                aria-label="Like Linda Future Initiative on Facebook">
+                Like Our Page
+              </a>
+            </div>
+          </div>
+
+          <!-- Instagram -->
+          <div class="lf-card" role="listitem" aria-labelledby="ig-title">
+            <div class="lf-card-icon instagram" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </div>
+
+            <div class="lf-card-body">
+              <h3 id="ig-title">Instagram</h3>
+              <p class="lf-handle">@lindafutureinitiative</p>
+
+              <a class="lf-btn"
+                href="https://www.instagram.com/lindafutureinitiative?igsh=bmt1bDNrazY0aGJm"
+                target="_blank" rel="noopener noreferrer"
+                aria-label="Follow Linda Future Initiative on Instagram">
+                Follow Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end section -->
+
+    <div class="section">
+  <div class="container">
+    <div class="aximo-map-wrap" style="text-align: center;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d3989.13466454689!2d37.25395966!3d-1.06068401!3m2!1i1024!2i768!4f13.1!2m1!1sCCI%20Powerline!5e0!3m2!1sen!2ske!4v1758014345412!5m2!1sen!2ske"
+        width="100%"
+        height="400"
+        style="border:0; border-radius: 12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+
+    <!-- end section -->
+
+    <div class="section aximo-section-padding">
+      <div class="container">
+        <div class="aximo-section-title center">
+          <h2>
+            FAQs about
+            <span class="aximo-title-animation">
+              our work and impact
+            </span>
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="aximo-accordion-normal-wrap responsive-margin">
+              <div class="aximo-accordion-normal-item">
+                <div class="aximo-accordion-normal-icon">
+                  <img src="assets/images/icon/question.svg" alt>
+                </div>
+                <div class="aximo-accordion-normal-data">
+                  <h3>Who benefits from your programs?</h3>
+                  <p>Our programs target young people, vulnerable students, and
+                    local communities seeking skills, mentorship, and
+                    sustainable livelihoods.</p>
+                </div>
+              </div>
+              <div class="aximo-accordion-normal-item">
+                <div class="aximo-accordion-normal-icon">
+                  <img src="assets/images/icon/question.svg" alt>
+                </div>
+                <div class="aximo-accordion-normal-data">
+                  <h3>How do you fund your initiatives?</h3>
+                  <p>We rely on partnerships, grants, community contributions,
+                    and collaboration with organizations aligned with our
+                    mission.</p>
+                </div>
+              </div>
+              <div class="aximo-accordion-normal-item">
+                <div class="aximo-accordion-normal-icon">
+                  <img src="assets/images/icon/question.svg" alt>
+                </div>
+                <div class="aximo-accordion-normal-data">
+                  <h3>Can I volunteer or collaborate with you?</h3>
+                  <p>Yes! We welcome volunteers, partners, and organizations
+                    interested in advancing youth empowerment, peacebuilding,
+                    and climate action.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="aximo-accordion-normal-wrap">
+              <div class="aximo-accordion-normal-item">
+                <div class="aximo-accordion-normal-icon">
+                  <img src="assets/images/icon/question.svg" alt>
+                </div>
+                <div class="aximo-accordion-normal-data">
+                  <h3>Do you provide mentorship or training?</h3>
+                  <p>>Absolutely. We offer mentorship, skills development
+                    workshops, and support programs to equip young people for
+                    self-reliance.</p>
+                </div>
+              </div>
+              <div class="aximo-accordion-normal-item">
+                <div class="aximo-accordion-normal-icon">
+                  <img src="assets/images/icon/question.svg" alt>
+                </div>
+                <div class="aximo-accordion-normal-data">
+                  <h3>How can I support Linda Future Initiative?</h3>
+                  <p>You can support us by volunteering, donating, partnering
+                    with our programs, or spreading the word about our
+                    mission.</p>
+                </div>
+              </div>
+              <div class="aximo-accordion-normal-item">
+                <div class="aximo-accordion-normal-icon">
+                  <img src="assets/images/icon/question.svg" alt>
+                </div>
+                <div class="aximo-accordion-normal-data">
+                  <h3>Where are your activities currently based?</h3>
+                  <p>Our core operations are in Thika East, Kenya, but we aim to
+                    expand our impact to other regions in the near future.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End section -->
+
+    <!-- Footer  -->
+
+    <footer class="aximo-footer-section2">
+    
+      <div class="container">
+        <div class="aximo-footer-top aximo-section-padding">
+          <div class="row">
+            <div class="col-xl-4 col-lg-12">
+              <div class="aximo-footer-textarea">
+                <a href>
+                  <img src="assets/images/logo/LINDA-LOGO.png" alt>
+                </a>
+                <p>Linda Future Initiative is a youth-led organization in Thika
+                  East, Kenya, empowering communities through mental health
+                  awareness,
+                  education, wellness, environmental action, and civic
+                  engagement</p>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-4">
+              <div class="aximo-footer-menu extar-margin">
+                <div class="aximo-footer-title">
+                  <p>Special Links</p>
+                </div>
+                <ul>
+                  <li><a href>About us</a></li>
+                  <li><a href>Our services</a></li>
+                  <li><a href>Portfolio</a></li>
+                  <li><a href>Blogs</a></li>
+                  <li><a href>Premium member</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-2 col-md-4">
+              <div class="aximo-footer-menu">
+                <div class="aximo-footer-title">
+                  <p>Special Links</p>
+                </div>
+                <ul>
+                  <li><a href>About us</a></li>
+                  <li><a href>Our services</a></li>
+                  <li><a href>Portfolio</a></li>
+                  <li><a href>Blogs</a></li>
+                  <li><a href>Premium member</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-4">
+              <div class="aximo-subscription">
+                <div class="aximo-footer-title">
+                  <p>Special Links</p>
+                </div>
+                <form action="#">
+                  <input type="email" placeholder="Email Address">
+                  <button id="aximo-subscription-btn" type="submit">
+                    <span class="aximo-label-up">Subscribe</span>
+                    <span class="aximo-label-up">Subscribe</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aximo-footer-bottom two">
+          <div class="row">
+            <div class="col-lg-6 order-lg-2">
+              <div class="aximo-social-icon2 right">
+                <ul>
+                  <li>
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=lindafutureyouthgroup@gmail.com"
+                      target="_blank">
+                      <i class="icon-message"></i>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="https://www.facebook.com/share/173Gcfedjq/"
+                      target="_blank">
+                      <i class="icon-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/lindafutureinitiative?igsh=bmt1bDNrazY0aGJm/"
+                      target="_blank">
+                      <i class="icon-instagram"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+              <div class="aximo-copywright two">
+                <p> &copy;2025 Linda Future Initiative. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/menu/menu.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/ScrollSmoother.min.js"></script>
+    <script src="assets/js/skill-bar.js"></script>
+    <script src="assets/js/infinite-slider.js"></script>
+    <script src="assets/js/image-resizing.js"></script>
+    <!-- <script src="assets/js/scrollsmooth.js"></script> -->
+    <script src="assets/js/faq.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
+
+    <script src="assets/js/app.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linda Future Initiative</title>
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico"
+      type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!--- End favicon-->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- End google font  -->
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/custom-font.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/icomoon.css">
+
+    <!-- Code Editor  -->
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/app.min.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+ <style>
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* full viewport height for true hero feel */
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Captions */
+.carousel-caption {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  color: #ffffff;
+  max-width: 650px;
+  animation: slideInUp 1s ease-out;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.carousel-caption h2 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.carousel-caption p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  line-height: 1.5;
+}
+
+/* Dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.8rem;
+  z-index: 10;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.carousel-dot.active {
+  background: #ffffff;
+  transform: scale(1.3);
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .hero-carousel {
+    height: 90vh;
+  }
+  .carousel-caption {
+    bottom: 15%;
+    left: 5%;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-carousel {
+    height: 70vh;
+  }
+  .carousel-caption {
+    bottom: 10%;
+    left: 5%;
+  }
+  .carousel-caption h2 {
+    font-size: 2rem;
+  }
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-carousel {
+    height: 60vh;
+  }
+  .carousel-caption {
+    bottom: 8%;
+    left: 5%;
+    max-width: 95%;
+  }
+  .carousel-caption h2 {
+    font-size: 1.5rem;
+  }
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ---- Reset Header Padding/Margin ---- */
+.site-header,
+.aximo-header-section,
+#sticky-menu,
+.site-header .container,
+.navbar {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+</style>
+
+  </head>
+
+  <body class="light">
+    <div class="aximo-preloader-wrap">
+      <div class="aximo-preloader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+<!--  -->
+    <!-- ===== NICE GLASS NAVBAR (DROP-IN) ===== -->
+<style>
+  :root{
+    --nav-h:72px;
+    --max:1200px;
+    --ink:#1f2937;
+    --muted:#6b7280;
+    --brand:#f50404;
+    --glass:rgba(255,255,255,.68);
+    --stroke:rgba(0,0,0,.08);
+  }
+  body{padding-top:var(--nav-h);} /* offset for fixed nav */
+
+  .lfi-nav{position:fixed; inset:0 0 auto 0; height:var(--nav-h); z-index:1000; display:flex; align-items:center; justify-content:center; pointer-events:none;}
+  .lfi-nav-inner{
+    pointer-events:auto;
+    width:min(94%,var(--max));
+    height:56px; display:flex; align-items:center; gap:14px; justify-content:space-between;
+    padding:6px 10px; border-radius:999px;
+    background:var(--glass);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    backdrop-filter: blur(12px) saturate(140%);
+    border:1px solid var(--stroke);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+    transition:height .22s ease, background .22s ease, box-shadow .22s ease, transform .22s ease;
+  }
+  .lfi-brand{display:flex; align-items:center; gap:10px}
+  .lfi-brand img{height:44px; width:auto; display:block}
+
+  .lfi-primary{display:flex; gap:6px; align-items:center}
+  .lfi-primary a{
+    display:inline-block; padding:10px 14px; border-radius:12px;
+    color:#222; font-weight:600; text-decoration:none;
+    transition:background .2s ease, color .2s ease, transform .2s ease;
+  }
+  .lfi-primary a:hover{background:rgba(0,0,0,.05); transform:translateY(-1px)}
+  .lfi-primary a[aria-current="page"]{background:#111; color:#fff}
+
+  .lfi-btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:10px 16px; border-radius:999px; font-weight:800; color:#fff; text-decoration:none;
+    background:linear-gradient(135deg, var(--brand) 0%, #ff6a6a 100%);
+    box-shadow:0 10px 22px rgba(245,4,4,.25);
+    border:1px solid rgba(245,4,4,.4);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .lfi-btn:hover{transform:translateY(-2px); box-shadow:0 16px 30px rgba(245,4,4,.35)}
+
+  /* mobile */
+  .lfi-burger{display:none; width:42px; height:42px; border-radius:12px; border:1px solid var(--stroke); background:rgba(255,255,255,.55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); cursor:pointer;}
+  .lfi-burger span,.lfi-burger::before,.lfi-burger::after{
+    content:""; display:block; width:20px; height:2px; background:#111; margin:0 auto; position:relative; top:20px; border-radius:2px;
+  }
+  .lfi-burger::before{transform:translateY(-6px)}
+  .lfi-burger::after{transform:translateY(4px)}
+
+  .lfi-drawer{
+    position:fixed; inset:var(--nav-h) 0 auto 0; z-index:999;
+    background:rgba(255,255,255,.9); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--stroke);
+    transform:translateY(-12px); opacity:0; visibility:hidden; transition:.22s ease;
+  }
+  .lfi-drawer.open{transform:none; opacity:1; visibility:visible}
+  .lfi-mobile{display:grid; gap:8px; padding:12px}
+  .lfi-mobile a{padding:12px 14px; border-radius:12px; background:rgba(0,0,0,.04); color:#111; font-weight:600; border:1px solid var(--stroke)}
+
+  /* scroll state */
+  .lfi-nav.is-scrolled .lfi-nav-inner{
+    height:52px; background:rgba(255,255,255,.9); box-shadow:0 10px 24px rgba(0,0,0,.16);
+  }
+
+  /* responsive */
+  @media (max-width:1024px){ .lfi-primary{gap:2px} }
+  @media (max-width:900px){
+    .lfi-primary,.lfi-btn{display:none}
+    .lfi-burger{display:block}
+  }
+  .no-scroll{overflow:hidden}
+</style>
+
+<header class="lfi-nav" id="lfiNav" role="banner">
+  <div class="lfi-nav-inner">
+    <a class="lfi-brand" href="index-02.html" aria-label="Linda Future Initiative">
+      <img src="assets/images/logo/LINDA-LOGO.png" alt="LFI logo">
+    </a>
+
+    <nav class="lfi-primary" aria-label="Primary">
+      <a href="index-02.html">Home</a>
+      <a href="about-us.html">About Us</a>
+      <a href="single-service.html">Programmes</a>
+      <a href="contact-us.html">Contact</a>
+    </nav>
+
+    <a class="lfi-btn" href="donate.html">Donate</a>
+    <button class="lfi-burger" id="lfiBurger" aria-label="Open menu" aria-expanded="false" aria-controls="lfiDrawer"><span></span></button>
+  </div>
+
+  <div class="lfi-drawer" id="lfiDrawer">
+    <nav class="lfi-mobile" aria-label="Mobile">
+      <a href="index-02.html">Home</a>
+      <a href="about-us.html">About Us</a>
+      <a href="single-service.html">Programmes</a>
+      <a href="contact-us.html">Contact</a>
+      <a class="lfi-btn" href="donate.html" style="margin:6px 0">Donate</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  (function(){
+    // Scroll shrink
+    const nav = document.getElementById('lfiNav');
+    const onScroll = ()=> nav.classList.toggle('is-scrolled', window.scrollY > 6);
+    onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+    // Active link (basic path match)
+    const here = location.pathname.split('/').pop() || 'index-02.html';
+    document.querySelectorAll('.lfi-primary a, .lfi-mobile a').forEach(a=>{
+      const target = a.getAttribute('href');
+      if(target && here.endsWith(target)) a.setAttribute('aria-current','page');
+    });
+
+    // Mobile drawer
+    const burger = document.getElementById('lfiBurger');
+    const drawer = document.getElementById('lfiDrawer');
+    function closeDrawer(){
+      drawer.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+      document.body.classList.remove('no-scroll');
+    }
+    burger.addEventListener('click', ()=>{
+      const open = drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('no-scroll', open);
+    });
+    drawer.addEventListener('click', e=>{
+      if(e.target.tagName === 'A') closeDrawer();
+    });
+    window.addEventListener('keydown', e=>{
+      if(e.key === 'Escape') closeDrawer();
+    });
+    window.addEventListener('resize', ()=>{
+      if(window.innerWidth > 900) closeDrawer();
+    });
+  })();
+</script>
+<!-- ===== /NAVBAR ===== -->
+
+
+
+
+
+<!-- Hero Carousel -->
+<section class="hero-section" style="margin:0; padding:0;">
+  <div class="hero-carousel" id="hero-carousel">
+    
+    <div class="carousel-slide active" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.65) 100%), url('assets/images/v2/school.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <div class="carousel-caption" style="color:#fff; text-align:center;">
+        <h2 style="color:#fff;">Linda Future Initiative</h2>
+        <p style="color:#fff;">Empowering futures, one initiative at a time </p>
+      </div>
+    </div>
+
+    <div class="carousel-slide" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.65) 100%), url('assets/images/v2/team.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <div class="carousel-caption" style="color:#fff; text-align:center;">
+        <h2 style="color:#fff;">Mental Health Awareness</h2>
+        <p style="color:#fff;">Through TUBONGE forums and outreach, breaking stigma and fostering support.</p>
+      </div>
+    </div>
+
+    <div class="carousel-slide" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.65) 100%), url('assets/images/v2/walk.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <div class="carousel-caption" style="color:#fff; text-align:center;">
+        <h2 style="color:#fff;">Educational Empowerment</h2>
+        <p style="color:#fff;">Supporting students, building futures, enabling access to quality learning.</p>
+      </div>
+    </div>
+
+    <div class="carousel-slide" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.65) 100%), url('assets/images/v2/walk2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <div class="carousel-caption" style="color:#fff; text-align:center;">
+        <h2 style="color:#fff;">Wellness & Support</h2>
+        <p style="color:#fff;">Nurturing mental health and well-being through community action and care.</p>
+      </div>
+    </div>
+
+    <div class="carousel-dots" id="carousel-dots"></div>
+  </div>
+  <br>
+  <br>
+   <br>
+  <br>
+</section>
+    <div class="aximo-all-section bg-light2">
+      <div class="aximo-hero-section2" style="margin-top:0; padding-top:0;">
+  <div class="aximo-hero-content2" style="max-width:800px; margin:0 auto; text-align:center;">
+    <h2 style="margin:0 0 20px; font-size:36px; font-weight:700; color:#222; line-height:1.2;">
+      ELEVATING COMMUNITIES
+    </h2>
+    <p style="margin:0 auto 30px; font-size:18px; color:#555; line-height:1.6; max-width:700px;">
+      At Linda Future Initiative, we believe real change starts with young people. 
+      From promoting mental wellness and climate-smart livelihoods to supporting 
+      vulnerable students, we are building resilient, self-reliant communities 
+      in Thika East, Kenya. Together with local well-wishers and partners, we 
+      turn compassion into action—creating healthier, stronger futures for all.
+    </p>
+    <div class="aximo-hero-btn-wrap center">
+      <a 
+        class="aximo-default-btn wow fadeInUpX" 
+        data-wow-delay="0.1s"
+        href="contact-us.html"
+        style="transition:0.3s;"
+        onmouseover="this.style.backgroundColor='red'; this.style.color='#fff';"
+        onmouseout="this.style.backgroundColor=''; this.style.color='';">
+        <span class="aximo-label-up">Get In Touch</span>
+        <span class="aximo-label-up" style="color:#f9f9f9;">Get In Touch</span>
+      </a>
+
+      <a
+        class="aximo-default-btn aximo-default-btn-outline wow fadeInUpX"
+        data-wow-delay="0.2s"
+        href="service.html">
+        <span class="aximo-label-up">See How We Make Impact</span>
+        <span class="aximo-label-up">See How We Make Impact</span>
+      </a>
+    </div>
+  </div>
+        
+<div class="aximo-hero-thumb-wrap" style="margin-bottom:0; padding-bottom:0;">
+  <div class="aximo-hero-thumb-item wow fadeInUpX" data-wow-delay="0s">
+    <img src="assets/images/v2/SPEAKER.png" alt>
+  </div>
+  <div class="aximo-hero-thumb-item wow fadeInUpX" data-wow-delay="0.1s">
+    <img src="assets/images/v2/PEACE-POST.png" alt>
+  </div>
+  <div class="aximo-hero-thumb-item wow fadeInUpX" data-wow-delay="0.2s">
+    <img src="assets/images/v2/STUDENTS.png" alt>
+  </div>
+  <div class="aximo-hero-thumb-item wow fadeInUpX" data-wow-delay="0.3s">
+    <img src="assets/images/v2/FUN.png" alt>
+  </div>
+  <div class="aximo-hero-thumb-item wow fadeInUpX" data-wow-delay="0.4s">
+    <img src="assets/images/v2/MENTALHEALT-PIC.png" alt>
+  </div>
+</div>
+
+<!-- End section -->
+
+<div class="section bg-light2 aximo-section-padding3 position-relative" style="padding:60px 0; background:#f8f9fa; margin-top:0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center" style="margin-bottom:40px;">
+        <h2 style="font-weight:700; font-size:36px; font-family:'Clash Grotesk', sans-serif; margin:0; color:#222;">
+          Our Achievements
+        </h2>
+      </div>
+    </div>
+
+    <div class="row achievements-grid" style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
+
+      <!-- Tubonge Forums -->
+      <div class="col-xl-4 col-md-6 achievement-card-enhanced glass-card achievement-card"
+           style="position:relative; overflow:hidden; border-radius:20px; max-width:380px; margin-bottom:30px; text-align:center; background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <div class="achievement-image-container" style="width:100%; height:280px; overflow:hidden; position:relative;">
+          <img src="assets/images/v2/IMG-20250916-WA0011.jpg" alt="Tubonge Forums"
+               style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;">
+          <div class="achievement-overlay" style="position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(45deg, rgba(255,107,107,0.8) 0%, rgba(255,142,83,0.8) 100%); opacity:0; transition:opacity 0.4s ease; display:flex; align-items:center; justify-content:center;">
+            <div class="overlay-content">
+              <i class="fas fa-users" style="font-size:3rem; color:#fff; margin-bottom:10px;"></i>
+              <p style="color:#fff; font-size:16px; font-weight:600;">Community Impact</p>
+            </div>
+          </div>
+        </div>
+        <div class="achievement-content" style="padding:25px; background:#fff; position:relative;">
+          <div class="achievement-icon" style="width:60px; height:60px; background:linear-gradient(135deg, #ff6b6b, #ffa726); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 15px; box-shadow:0 8px 25px rgba(255,107,107,0.3);">
+            <i class="fas fa-comments" style="font-size:24px; color:#fff;"></i>
+          </div>
+          <h3 style="margin:0 0 15px; font-size:22px; font-weight:800; color:#222; font-family:'Clash Grotesk', sans-serif;">Tubonge Forums</h3>
+          <p style="margin:0; font-size:16px; color:#666; line-height:1.6;">
+            We have successfully held numerous open forums discussing mental health, creating safe spaces for dialogue and peer support.
+          </p>
+          <div class="achievement-stats" style="margin-top:15px; padding-top:15px; border-top:2px solid #f0f0f0;">
+            <span style="display:inline-block; background:#ff6b6b; color:#fff; padding:5px 12px; border-radius:20px; font-size:12px; font-weight:600;">15+ Forums</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Linda Mazingira -->
+      <div class="col-xl-4 col-md-6 achievement-card-enhanced glass-card achievement-card"
+           style="position:relative; overflow:hidden; border-radius:20px; max-width:380px; margin-bottom:30px; text-align:center; background:linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+        <div class="achievement-image-container" style="width:100%; height:280px; overflow:hidden; position:relative;">
+          <img src="assets/images/v2/IMG-20250916-WA0010.jpg" alt="Linda Mazingira"
+               style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;">
+          <div class="achievement-overlay" style="position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(45deg, rgba(52,152,219,0.8) 0%, rgba(155,89,182,0.8) 100%); opacity:0; transition:opacity 0.4s ease; display:flex; align-items:center; justify-content:center;">
+            <div class="overlay-content">
+              <i class="fas fa-leaf" style="font-size:3rem; color:#fff; margin-bottom:10px;"></i>
+              <p style="color:#fff; font-size:16px; font-weight:600;">Environmental Action</p>
+            </div>
+          </div>
+        </div>
+        <div class="achievement-content" style="padding:25px; background:#fff; position:relative;">
+          <div class="achievement-icon" style="width:60px; height:60px; background:linear-gradient(135deg, #3498db, #9b59b6); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 15px; box-shadow:0 8px 25px rgba(52,152,219,0.3);">
+            <i class="fas fa-tree" style="font-size:24px; color:#fff;"></i>
+          </div>
+          <h3 style="margin:0 0 15px; font-size:22px; font-weight:800; color:#222; font-family:'Clash Grotesk', sans-serif;">Linda Mazingira</h3>
+          <p style="margin:0; font-size:16px; color:#666; line-height:1.6;">
+            We have conducted multiple forums addressing climate change and its profound impact on mental health and community well-being.
+          </p>
+          <div class="achievement-stats" style="margin-top:15px; padding-top:15px; border-top:2px solid #f0f0f0;">
+            <span style="display:inline-block; background:#3498db; color:#fff; padding:5px 12px; border-radius:20px; font-size:12px; font-weight:600;">12+ Initiatives</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Student Support -->
+      <div class="col-xl-4 col-md-6 achievement-card-enhanced glass-card achievement-card"
+           style="position:relative; overflow:hidden; border-radius:20px; max-width:380px; margin-bottom:30px; text-align:center; background:linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+        <div class="achievement-image-container" style="width:100%; height:280px; overflow:hidden; position:relative;">
+          <img src="assets/images/v2/IMG-20250916-WA0012.jpg" alt="Student Support"
+               style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;">
+          <div class="achievement-overlay" style="position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(45deg, rgba(46,204,113,0.8) 0%, rgba(52,152,219,0.8) 100%); opacity:0; transition:opacity 0.4s ease; display:flex; align-items:center; justify-content:center;">
+            <div class="overlay-content">
+              <i class="fas fa-graduation-cap" style="font-size:3rem; color:#fff; margin-bottom:10px;"></i>
+              <p style="color:#fff; font-size:16px; font-weight:600;">Education Support</p>
+            </div>
+          </div>
+        </div>
+        <div class="achievement-content" style="padding:25px; background:#fff; position:relative;">
+          <div class="achievement-icon" style="width:60px; height:60px; background:linear-gradient(135deg, #2ecc71, #3498db); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 15px; box-shadow:0 8px 25px rgba(46,204,113,0.3);">
+            <i class="fas fa-book-open" style="font-size:24px; color:#fff;"></i>
+          </div>
+          <h3 style="margin:0 0 15px; font-size:22px; font-weight:800; color:#222; font-family:'Clash Grotesk', sans-serif;">Student Support</h3>
+          <p style="margin:0; font-size:16px; color:#666; line-height:1.6;">
+            We have helped many students stay in school, supporting their mental health and paving the way for their future success.
+          </p>
+          <div class="achievement-stats" style="margin-top:15px; padding-top:15px; border-top:2px solid #f0f0f0;">
+            <span style="display:inline-block; background:#2ecc71; color:#fff; padding:5px 12px; border-radius:20px; font-size:12px; font-weight:600;">50+ Students</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="aximo-about-section bg-red extra-side-margin clash-grotesk">
+        <div id="aximo-counter"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5">
+              <div class="aximo-thumb" id="rotatetwo">
+                <img src="assets/images/v2/PatTrial.jpg" alt>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="aximo-default-content clash-grotesk"style="margin-bottom: 0; padding:0px;">
+                <h2>Our Commitment to Partners</h2>
+                <p>We work hand-in-hand with local communities, organizations,
+                  and well-wishers to raise mental health awareness, empower
+                  youth, and create climate-smart livelihoods. Together, we
+                  ensure every partnership leads to real, lasting impact in
+                  rural Kenya.</p>
+              </div>
+              <div class="aximo-counter-wrap2">
+                <div class="aximo-counter-data2">
+                  <h2><span data-percentage="10"
+                      class="aximo-counter"></span>+</h2>
+                  <p>Secondary schools supported</p>
+                </div>
+                <div class="aximo-counter-data2">
+                  <h2><span data-percentage="15"
+                      class="aximo-counter"></span>+</h2>
+                  <p>Students currently benefiting</p>
+                </div>
+                <div class="aximo-counter-data2">
+                  <h2><span data-percentage="20"
+                      class="aximo-counter"></span>+</h2>
+                  <p>Community forums & wellness events</p>
+                  <p></p>
+                  
+                </div>
+              </div>
+              <div class="swiper aximo-auto-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="aximo-brandlogo-item">
+                <img src="assets/images/v2/NTSA-LOGO.png" alt>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="aximo-brandlogo-item">
+                <img src="assets/images/v2/MOYOCHILDRENCENTER.png" alt>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="aximo-brandlogo-item">
+                <img src="assets/images/v2/TMTLOGISTICS.png" alt>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="aximo-brandlogo-item">
+                <img src="assets/images/v2/SHUJAA.png" alt>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="aximo-brandlogo-item">
+                <img src="assets/images/v2/NTSA-LOGO.png" alt>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="aximo-brandlogo-item">
+                <img src="assets/images/v2/MOYOCHILDRENCENTER.png" alt>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="aximo-brandlogo-item">
+                <img src="assets/images/v2/TMTLOGISTICS.png" alt>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="aximo-brandlogo-item">
+                <img src="assets/images/v2/SHUJAA.png" alt>
+              </div>
+            </div>
+            
+            </div>
+
+          </div>
+        </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- End section -->
+
+      <div class="section aximo-section-padding position-relative"style="margin-top: 0; padding:0px;>
+        <div class="container">
+          <div class="aximo-section-title center clash-grotesk"style="margin-top: 0; padding:0px;">
+            <h2>
+              Linda Future Initiative Programs
+            </h2>
+          </div>
+        </div>
+        <div class="aximo-service-increase-wrap">
+          <div class="aximo-service-increase-row">
+            <div class="aximo-service-increase-item">
+              <img class="swipeimage"
+                src="assets/images/service/mentalhealth-awareness.png" alt>
+              <div class="aximo-service-increase-title">
+                <h3>Mental Health Awareness:</h3>
+              </div>
+              <div class="aximo-service-increase-body">
+                <p>We run forums like TUBONGE to break stigma around mental
+                  health, create safe spaces for dialogue, and promote
+                  peer-to-peer support in rural communities.
+                </p>
+              </div>
+              <a href="single-service.html" class="aximo-service-increase-icon">
+                <i class="icon-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="aximo-service-increase-row">
+            <div class="aximo-service-increase-item">
+              <img class="swipeimage"
+                src="assets/images/service/physical-awareness.png" alt>
+              <div class="aximo-service-increase-title">
+                <h3>Physical Wellness:</h3>
+              </div>
+              <div class="aximo-service-increase-body">
+                <p>Through cycling events, wellness walks, and games, we
+                  encourage healthy lifestyles that strengthen both the body and
+                  mind.
+                </p>
+              </div>
+              <a href="single-service.html" class="aximo-service-increase-icon">
+                <i class="icon-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="aximo-service-increase-row">
+            <div class="aximo-service-increase-item">
+              <img class="swipeimage"
+                src="assets/images/service/Education-support.png" alt>
+              <div class="aximo-service-increase-title">
+                <h3>Educational Support:</h3>
+              </div>
+              <div class="aximo-service-increase-body">
+                <p>With the help of well-wishers, we support vulnerable
+                  secondary school students, ensuring they stay in school and
+                  build a brighter future.</p>
+              </div>
+              <a href="single-service.html" class="aximo-service-increase-icon">
+                <i class="icon-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="aximo-service-increase-row">
+            <div class="aximo-service-increase-item">
+              <img class="swipeimage"
+                src="assets/images/service/Envromental-restoration.png" alt>
+              <div class="aximo-service-increase-title">
+                <h3>Environmental Restoration (LINDA MAZINGIRA):</h3>
+              </div>
+              <div class="aximo-service-increase-body">
+                <p>Our LINDA MAZINGIRA forums and tree-planting activities raise
+                  climate awareness and connect environmental care to mental
+                  well-being.</p>
+              </div>
+              <a href="single-service.html" class="aximo-service-increase-icon">
+                <i class="icon-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="aximo-service-increase-row">
+            <div class="aximo-service-increase-item">
+              <img class="swipeimage"
+                src="assets/images/service/peacebuilding.png" alt>
+              <div class="aximo-service-increase-title">
+                <h3>Civic Engagement & Peacebuilding:</h3>
+              </div>
+              <div class="aximo-service-increase-body">
+                <p>We empower youth through civic education, leadership
+                  training, and peacebuilding initiatives, building resilient
+                  and self-reliant communities.</p>
+              </div>
+              <a href="single-service.html" class="aximo-service-increase-icon">
+                <i class="icon-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End section -->
+
+     <!--<div class="aximo-video-section extra-side-margin wow fadeInUpX"
+        data-wow-delay="0s">
+        <img src="assets/images/v2/video-bg.png" alt>
+        <a class="aximo-video-popup play-btn-size video-init"
+          href="https://www.youtube.com/watch?v=7e90gBu4pas">
+          <img src="assets/images/v2/play-btn.png" alt>
+          <div class="waves wave-1"></div>
+          <div class="waves wave-2"></div>
+          <div class="waves wave-3"></div>
+        </a>
+      </div>-->
+      <!-- End section -->
+
+      <!-- End section -->
+
+      <div class="bg-red aximo-section-padding extra-side-margin">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="aximo-default-content clash-grotesk aximo-sticky">
+                <h2>Voices from Our Beneficiaries</h2>
+                <p>Hearing directly from the youth, students, and community
+                  members we support inspires us to keep going. Their stories
+                  are living proof of the positive change we’re making
+                  together.</p>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="aximo-testimonial-column">
+                <div class="aximo-testimonial-wrap aximo-testimonial-wrap2">
+                  <div class="aximo-testimonial-rating">
+                    <ul>
+                      <li><img src="assets/images/v2/star.svg" alt></li>
+                      <li><img src="assets/images/v2/star.svg" alt></li>
+                      <li><img src="assets/images/v2/star.svg" alt></li>
+                      <li><img src="assets/images/v2/star.svg" alt></li>
+                      <li><img src="assets/images/v2/star.svg" alt></li>
+                    </ul>
+                  </div>
+                  <div class="aximo-testimonial-data">
+                    <p>"Thanks to Linda Future Initiative, my children are back in school and their mental well-being has greatly improved. Their support has been life-changing for our family."</p>
+                  </div>
+                  <div class="aximo-testimonial-author">
+                    <div class="aximo-testimonial-author-thumb">
+                      <img src="assets/images/v1/mary.png" alt>
+                    </div>
+                    <div class="aximo-testimonial-author-data">
+                      <p>Mary Wanjiru <span>Parent & Community Member</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="aximo-testimonial-wrap aximo-testimonial-wrap2">
+                  <div class="aximo-testimonial-rating">
+                    <ul>
+                      <li><img src="assets/images/v2/star.svg" alt></li>
+                      <li><img src="assets/images/v2/star.svg" alt></li>
+                      <li><img src="assets/images/v2/star.svg" alt></li>
+                      <li><img src="assets/images/v2/star.svg" alt></li>
+                      <li><img src="assets/images/v2/star.svg" alt></li>
+                    </ul>
+                  </div>
+                  <div class="aximo-testimonial-data">
+                    <p>"The mental health forums opened my eyes to the importance of talking about our struggles. I now help others in my village seek help and find hope."</p>
+                  </div>
+                  <div class="aximo-testimonial-author">
+                    <div class="aximo-testimonial-author-thumb">
+                      <img src="assets/images/v1/peter.png" alt>
+                    </div>
+                    <div class="aximo-testimonial-author-data">
+                      <p> Peter Kamau <span>Youth Beneficiary</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="aximo-testimonial-wrap aximo-testimonial-wrap2">
+                  <div class="aximo-testimonial-rating">
+                    <ul>
+                      <li><img src="assets/images/v2/star.svg" alt></li>
+                      <li><img src="assets/images/v2/star.svg" alt></li>
+                      <li><img src="assets/images/v2/star.svg" alt></li>
+                      <li><img src="assets/images/v2/star.svg" alt></li>
+                      <li><img src="assets/images/v2/star.svg" alt></li>
+                    </ul>
+                  </div>
+                  <div class="aximo-testimonial-data">
+                    <p>"Partnering with Linda Future Initiative has allowed our organization to directly impact the lives of vulnerable students and promote mental health awareness in our community."</p>
+                  </div>
+                  <div class="aximo-testimonial-author">
+                    <div class="aximo-testimonial-author-thumb">
+                      <img src="assets/images/v1/jane.png" alt>
+                    </div>
+                    <div class="aximo-testimonial-author-data">
+                      <p>Jane Njeri <span>Local Partner</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+      <!-- End section -->
+
+      <div class="section aximo-section-padding">
+        <div class="container">
+          <div class="aximo-section-title center clash-grotesk">
+            <h2>
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <div class="aximo-accordion-wrap aximo-accordion-wrap2"
+            id="aximo-accordion">
+            <div class="aximo-accordion-column wow fadeInUpX"
+              data-wow-delay=".1s">
+              <div class="aximo-accordion-item open">
+                <div class="aximo-accordion-header">
+                  <h3>What is Linda Future Initiative's vision?</h3>
+                  <div class="aximo-accordion-icon active">
+                    <i class="icon-minus"></i>
+                  </div>
+                  <div class="aximo-accordion-icon inactive">
+                    <i class="icon-plus"></i>
+                  </div>
+                </div>
+                <div class="aximo-accordion-body">
+                  <p>Our vision is to build resilient, self-reliant communities
+                    where youth and vulnerable groups have access to mental
+                    health support, education, and sustainable livelihoods.</p>
+                </div>
+              </div>
+              <div class="aximo-accordion-item">
+                <div class="aximo-accordion-header">
+                  <h3>Do you offer free community programs?</h3>
+                  <div class="aximo-accordion-icon active">
+                    <i class="icon-minus"></i>
+                  </div>
+                  <div class="aximo-accordion-icon inactive">
+                    <i class="icon-plus"></i>
+                  </div>
+                </div>
+                <div class="aximo-accordion-body">
+                  <p>Yes! Most of our initiatives, including wellness walks,
+                    school support programs, and mental health forums, are
+                    provided free of charge with the help of well-wishers.</p>
+                </div>
+              </div>
+              <div class="aximo-accordion-item">
+                <div class="aximo-accordion-header">
+                  <h3>Who are the beneficiaries of your work?</h3>
+                  <div class="aximo-accordion-icon active">
+                    <i class="icon-minus"></i>
+                  </div>
+                  <div class="aximo-accordion-icon inactive">
+                    <i class="icon-plus"></i>
+                  </div>
+                </div>
+                <div class="aximo-accordion-body">
+                  <p>We support vulnerable students in secondary schools, local
+                    families in need, and community groups seeking better
+                    health, education, and climate-smart opportunities.</p>
+                </div>
+              </div>
+            </div>
+            <div class="aximo-accordion-column wow fadeInUpX"
+              data-wow-delay="0.2s">
+              <div class="aximo-accordion-item">
+                <div class="aximo-accordion-header">
+                  <h3>Are we open to partnerships?</h3>
+                  <div class="aximo-accordion-icon active">
+                    <i class="icon-minus"></i>
+                  </div>
+                  <div class="aximo-accordion-icon inactive">
+                    <i class="icon-plus"></i>
+                  </div>
+                </div>
+                <div class="aximo-accordion-body">
+                  <p>Absolutely! We welcome collaborations with individuals,
+                    organizations, and institutions who share our vision for a
+                    healthier, more empowered future.</p>
+                </div>
+              </div>
+              <div class="aximo-accordion-item">
+                <div class="aximo-accordion-header">
+                  <h3>How can I support your initiatives?</h3>
+                  <div class="aximo-accordion-icon active">
+                    <i class="icon-minus"></i>
+                  </div>
+                  <div class="aximo-accordion-icon inactive">
+                    <i class="icon-plus"></i>
+                  </div>
+                </div>
+                <div class="aximo-accordion-body">
+                  <p>You can support by donating, volunteering, or partnering
+                    with us to sponsor students and fund community programs.</p>
+                </div>
+              </div>
+              <div class="aximo-accordion-item">
+                <div class="aximo-accordion-header">
+                  <h3>How can I get in touch with you?</h3>
+                  <div class="aximo-accordion-icon active">
+                    <i class="icon-minus"></i>
+                  </div>
+                  <div class="aximo-accordion-icon inactive">
+                    <i class="icon-plus"></i>
+                  </div>
+                </div>
+                <div class="aximo-accordion-body">
+                  <p>You can reach us through our contact form, email, or by
+                    visiting our office in Thika East, Kenya. We’d love to hear
+                    from you.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End section -->
+
+      
+    </div>
+
+    <!-- Footer  -->
+
+    <footer class="aximo-footer-section2">
+    
+      <div class="container">
+        <div class="aximo-footer-top aximo-section-padding">
+          <div class="row">
+            <div class="col-xl-4 col-lg-12">
+              <div class="aximo-footer-textarea">
+                <a href>
+                  <img src="assets/images/logo/LINDA-LOGO.png" alt>
+                </a>
+                <p>Linda Future Initiative is a youth-led organization in Thika
+                  East, Kenya, empowering communities through mental health
+                  awareness,
+                  education, wellness, environmental action, and civic
+                  engagement</p>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-4">
+              <div class="aximo-footer-menu extar-margin">
+                <div class="aximo-footer-title">
+                  <p>Special Links</p>
+                </div>
+                <ul>
+                  <li><a href>About us</a></li>
+                  <li><a href>Our services</a></li>
+                  <li><a href>Portfolio</a></li>
+                  <li><a href>Blogs</a></li>
+                  <li><a href>Premium member</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-2 col-md-4">
+              <div class="aximo-footer-menu">
+                <div class="aximo-footer-title">
+                  <p>Special Links</p>
+                </div>
+                <ul>
+                  <li><a href>About us</a></li>
+                  <li><a href>Our services</a></li>
+                  <li><a href>Portfolio</a></li>
+                  <li><a href>Blogs</a></li>
+                  <li><a href>Premium member</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-4">
+              <div class="aximo-subscription">
+                <div class="aximo-footer-title">
+                  <p>Special Links</p>
+                </div>
+                <form action="#">
+                  <input type="email" placeholder="Email Address">
+                  <button id="aximo-subscription-btn" type="submit">
+                    <span class="aximo-label-up">Subscribe</span>
+                    <span class="aximo-label-up">Subscribe</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aximo-footer-bottom two">
+          <div class="row">
+            <div class="col-lg-6 order-lg-2">
+              <div class="aximo-social-icon2 right">
+                <ul>
+                  <li>
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=lindafutureyouthgroup@gmail.com"
+                      target="_blank">
+                      <i class="icon-message"></i>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="https://www.facebook.com/share/173Gcfedjq/"
+                      target="_blank">
+                      <i class="icon-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/lindafutureinitiative?igsh=bmt1bDNrazY0aGJm/"
+                      target="_blank">
+                      <i class="icon-instagram"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+              <div class="aximo-copywright two">
+                <p> &copy;2025 Linda Future Initiative. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/menu/menu.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/ScrollSmoother.min.js"></script>
+    <script src="assets/js/skill-bar.js"></script>
+    <script src="assets/js/infinite-slider.js"></script>
+    <script src="assets/js/image-resizing.js"></script>
+    <!-- <script src="assets/js/scrollsmooth.js"></script> -->
+    <script src="assets/js/faq.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".carousel-slide");
+    const dotsContainer = document.getElementById("carousel-dots");
+    let currentIndex = 0;
+    let interval;
+
+    // Create dots
+    slides.forEach((_, idx) => {
+      const dot = document.createElement("div");
+      dot.classList.add("carousel-dot");
+      if (idx === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => goToSlide(idx));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll(".carousel-dot");
+
+    function goToSlide(index) {
+      slides[currentIndex].classList.remove("active");
+      dots[currentIndex].classList.remove("active");
+      currentIndex = index;
+      slides[currentIndex].classList.add("active");
+      dots[currentIndex].classList.add("active");
+      resetInterval();
+    }
+
+    function nextSlide() {
+      let nextIndex = (currentIndex + 1) % slides.length;
+      goToSlide(nextIndex);
+    }
+
+    function resetInterval() {
+      clearInterval(interval);
+      interval = setInterval(nextSlide, 5000); // 5s per slide
+    }
+
+    resetInterval();
+  });
+</script>
+
+
+  </body>
+</html>

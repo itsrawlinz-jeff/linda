@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linda Future Initiative </title>
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico"
+      type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!--- End favicon-->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Syne:wght@400..800&display=swap"
+      rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/custom-font.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/icomoon.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+
+    <!-- Code Editor  -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/app.min.css">
+  </head>
+
+  <body class="light">
+
+    <div class="aximo-preloader-wrap">
+      <div class="aximo-preloader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+<!-- ===== NICE GLASS NAVBAR (DROP-IN) ===== -->
+<style>
+  :root{
+    --nav-h:72px;
+    --max:1200px;
+    --ink:#1f2937;
+    --muted:#6b7280;
+    --brand:#f50404;
+    --glass:rgba(255,255,255,.68);
+    --stroke:rgba(0,0,0,.08);
+  }
+  body{padding-top:var(--nav-h);} /* offset for fixed nav */
+
+  .lfi-nav{position:fixed; inset:0 0 auto 0; height:var(--nav-h); z-index:1000; display:flex; align-items:center; justify-content:center; pointer-events:none;}
+  .lfi-nav-inner{
+    pointer-events:auto;
+    width:min(94%,var(--max));
+    height:56px; display:flex; align-items:center; gap:14px; justify-content:space-between;
+    padding:6px 10px; border-radius:999px;
+    background:var(--glass);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    backdrop-filter: blur(12px) saturate(140%);
+    border:1px solid var(--stroke);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+    transition:height .22s ease, background .22s ease, box-shadow .22s ease, transform .22s ease;
+  }
+  .lfi-brand{display:flex; align-items:center; gap:10px}
+  .lfi-brand img{height:44px; width:auto; display:block}
+
+  .lfi-primary{display:flex; gap:6px; align-items:center}
+  .lfi-primary a{
+    display:inline-block; padding:10px 14px; border-radius:12px;
+    color:#222; font-weight:600; text-decoration:none;
+    transition:background .2s ease, color .2s ease, transform .2s ease;
+  }
+  .lfi-primary a:hover{background:rgba(0,0,0,.05); transform:translateY(-1px)}
+  .lfi-primary a[aria-current="page"]{background:#111; color:#fff}
+
+  .lfi-btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:10px 16px; border-radius:999px; font-weight:800; color:#fff; text-decoration:none;
+    background:linear-gradient(135deg, var(--brand) 0%, #ff6a6a 100%);
+    box-shadow:0 10px 22px rgba(245,4,4,.25);
+    border:1px solid rgba(245,4,4,.4);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .lfi-btn:hover{transform:translateY(-2px); box-shadow:0 16px 30px rgba(245,4,4,.35)}
+
+  /* mobile */
+  .lfi-burger{display:none; width:42px; height:42px; border-radius:12px; border:1px solid var(--stroke); background:rgba(255,255,255,.55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); cursor:pointer;}
+  .lfi-burger span,.lfi-burger::before,.lfi-burger::after{
+    content:""; display:block; width:20px; height:2px; background:#111; margin:0 auto; position:relative; top:20px; border-radius:2px;
+  }
+  .lfi-burger::before{transform:translateY(-6px)}
+  .lfi-burger::after{transform:translateY(4px)}
+
+  .lfi-drawer{
+    position:fixed; inset:var(--nav-h) 0 auto 0; z-index:999;
+    background:rgba(255,255,255,.9); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--stroke);
+    transform:translateY(-12px); opacity:0; visibility:hidden; transition:.22s ease;
+  }
+  .lfi-drawer.open{transform:none; opacity:1; visibility:visible}
+  .lfi-mobile{display:grid; gap:8px; padding:12px}
+  .lfi-mobile a{padding:12px 14px; border-radius:12px; background:rgba(0,0,0,.04); color:#111; font-weight:600; border:1px solid var(--stroke)}
+
+  /* scroll state */
+  .lfi-nav.is-scrolled .lfi-nav-inner{
+    height:52px; background:rgba(255,255,255,.9); box-shadow:0 10px 24px rgba(0,0,0,.16);
+  }
+
+  /* responsive */
+  @media (max-width:1024px){ .lfi-primary{gap:2px} }
+  @media (max-width:900px){
+    .lfi-primary,.lfi-btn{display:none}
+    .lfi-burger{display:block}
+  }
+  .no-scroll{overflow:hidden}
+</style>
+
+<header class="lfi-nav" id="lfiNav" role="banner">
+  <div class="lfi-nav-inner">
+    <a class="lfi-brand" href="index-02.html" aria-label="Linda Future Initiative">
+      <img src="assets/images/logo/LINDA-LOGO.png" alt="LFI logo">
+    </a>
+
+    <nav class="lfi-primary" aria-label="Primary">
+      <a href="index-02.html">Home</a>
+      <a href="about-us.html">About Us</a>
+      <a href="single-service.html">Programmes</a>
+      <a href="contact-us.html">Contact</a>
+    </nav>
+
+    <a class="lfi-btn" href="donate.html">Donate</a>
+    <button class="lfi-burger" id="lfiBurger" aria-label="Open menu" aria-expanded="false" aria-controls="lfiDrawer"><span></span></button>
+  </div>
+
+  <div class="lfi-drawer" id="lfiDrawer">
+    <nav class="lfi-mobile" aria-label="Mobile">
+      <a href="index-02.html">Home</a>
+      <a href="about-us.html">About Us</a>
+      <a href="single-service.html">Programmes</a>
+      <a href="contact-us.html">Contact</a>
+      <a class="lfi-btn" href="donate.html" style="margin:6px 0">Donate</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  (function(){
+    // Scroll shrink
+    const nav = document.getElementById('lfiNav');
+    const onScroll = ()=> nav.classList.toggle('is-scrolled', window.scrollY > 6);
+    onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+    // Active link (basic path match)
+    const here = location.pathname.split('/').pop() || 'index-02.html';
+    document.querySelectorAll('.lfi-primary a, .lfi-mobile a').forEach(a=>{
+      const target = a.getAttribute('href');
+      if(target && here.endsWith(target)) a.setAttribute('aria-current','page');
+    });
+
+    // Mobile drawer
+    const burger = document.getElementById('lfiBurger');
+    const drawer = document.getElementById('lfiDrawer');
+    function closeDrawer(){
+      drawer.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+      document.body.classList.remove('no-scroll');
+    }
+    burger.addEventListener('click', ()=>{
+      const open = drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('no-scroll', open);
+    });
+    drawer.addEventListener('click', e=>{
+      if(e.target.tagName === 'A') closeDrawer();
+    });
+    window.addEventListener('keydown', e=>{
+      if(e.key === 'Escape') closeDrawer();
+    });
+    window.addEventListener('resize', ()=>{
+      if(window.innerWidth > 900) closeDrawer();
+    });
+  })();
+</script>
+<!-- ===== /NAVBAR ===== -->
+
+
+    <div class="aximo-breadcrumb" 
+     style="margin-top:100px; margin-bottom:0px;  padding:10px 0; text-align:center; background-color:#fff;">
+  <div class="container">
+    <nav class="breadcrumbs" style="display:inline-block; margin:0; padding:0;">
+      <ul style="list-style:none; margin:0; padding:0; display:flex; gap:8px; justify-content:center; font-size:16px; font-weight:400;">
+        <li>
+          <a href="index-02.html" style="text-decoration:none; color:#333;">Home</a>
+        </li>
+        <li aria-current="page" style="color:#05abe8; padding: 0px;">› About Us</li>
+      </ul>
+    </nav>
+  </div>
+</div>
+    <!-- End breadcrumb -->
+
+    <div class="section aximo-section-padding" style="margin-top: 0; padding:30px;">
+      <div id="aximo-counter"></div>
+      <div class="container">
+        <div class="aximo-section-title">
+          <div class="row">
+            <div class="col-lg-7">
+              <h2>
+                <span class="aximo-title-animation">
+                  Empowering
+                </span>
+                futures, one initiative at a time
+              </h2>
+            </div>
+            <div class="col-lg-4 offset-lg-1 d-flex align-items-center">
+              <p>At Linda Future Initiative, we work hand-in-hand with
+                changemakers, startups, and communities to unlock opportunities,
+                nurture ideas, and create lasting impact.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="aximo-video-wrap wow fadeInUpX" data-wow-delay="0.1s">
+              <img src="assets/images/about/meetup.jpg" alt>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="aximo-counter-wrap">
+              <div class="aximo-counter-data">
+                <h2 class="aximo-counter-number"><span data-percentage="3"
+                    class="aximo-counter"></span>+</h2>
+                <p>Years of collective experience</p>
+              </div>
+              <div class="aximo-counter-data">
+                <h2 class="aximo-counter-number"><span data-percentage="10"
+                    class="aximo-counter"></span>+</h2>
+                <p>Projects supported</p>
+              </div>
+              <div class="aximo-counter-data">
+                <h2 class="aximo-counter-number"><span data-percentage="100"
+                    class="aximo-counter"></span>%</h2>
+                <p>Impact-driven success rate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End section -->
+
+    <div class="section aximo-section-padding6">
+      <div class="container">
+        <div class="aximo-section-title center title-description">
+          <h2>
+            <span class="aximo-title-animation">
+              Our story is
+              
+            </span>
+            shaping tomorrow's innovators
+          </h2>
+          <p>Linda Future Initiative is a youth-led organization in Thika East,
+            Kenya, empowering communities through civic engagement, wellness
+            advocacy, and environmental restoration. We mobilize young people to
+            drive change in health, peacebuilding, and climate-smart livelihoods
+            while supporting vulnerable students with education and mentorship
+            to create a resilient, self-reliant future.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="aximo-story-thumb wow fadeInUpX" data-wow-delay="0.1s">
+              <img src="assets/images/about/activity.jpg" alt>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="aximo-story-thumb wow fadeInUpX" data-wow-delay="0.2s">
+              <img src="assets/images/about/dinner.jpg" alt>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="aximo-story-thumb wow fadeInUpX" data-wow-delay="0.3s">
+              <img src="assets/images/v2/MENTALHEALT-PIC.png" alt>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="aximo-story-thumb wow fadeInUpX" data-wow-delay="0.4s">
+              <img src="assets/images/about/group.jpg" alt>
+            </div>
+          </div>
+        </div>
+
+        <div class="aximo-story-content">
+          <div class="row">
+            <div class="col-lg-6">
+              <h3>Our core vision</h3>
+              <p>To create a future where mental health is prioritized and
+                accessible to every one in rural kenya especially the youth,
+                fostering a community that thrives on holistic well-being and
+                resilience. </p>
+            </div>
+            <div class="col-lg-6">
+              <h3>Our main mission</h3>
+              <p>To raise mental health awarenesss in rural areas of central
+                kenya through physical activities, community forums, and
+                educational sessions, working closely with the local community,
+                organizations, government bodies and well wishers. </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- End section -->
+
+    <div class="aximo-auto-slider-section">
+      <div class="swiper aximo-auto-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="aximo-auto-slider-item">
+              <h3>Creating Impact Together</h3>
+              <img src="assets/images/v1/star3.png" alt>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="aximo-auto-slider-item">
+              <h3>Creating Impact Together</h3>
+              <img src="assets/images/v1/star3.png" alt>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="aximo-auto-slider-item">
+              <h3>Creating Impact Together</h3>
+              <img src="assets/images/v1/star3.png" alt>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="aximo-auto-slider-item">
+              <h3>Creating Impact Together</h3>
+              <img src="assets/images/v1/star3.png" alt>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="aximo-auto-slider-item">
+              <h3>Creating Impact Together</h3>
+              <img src="assets/images/v1/star3.png" alt>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="aximo-auto-slider-item">
+              <h3>Creating Impact Together</h3>
+              <img src="assets/images/v1/star3.png" alt>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="aximo-auto-slider-item">
+              <h3>Creating Impact Together</h3>
+              <img src="assets/images/v1/star3.png" alt>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="aximo-auto-slider-item">
+              <h3>Creating Impact Together</h3>
+              <img src="assets/images/v1/star3.png" alt>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End section -->
+
+    <div class="section aximo-section-padding3">
+      <div class="container">
+        <div class="aximo-section-title center">
+          <h2>
+            Meet Our Board
+            <span class="aximo-title-animation">
+              Of Directors       
+            </span>
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col-xl-3 col-md-6">
+            <div class="aximo-team-wrap wow fadeInUpX" data-wow-delay="0s">
+              <div class="aximo-team-thumb">
+                <img src="assets/images/team/4.jpg" alt>
+              </div>
+              <div class="aximo-team-data">
+              <a href="single-team.html">
+              <h3>Chairman</h3>
+              <p>Njuguna</p>
+              </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="aximo-team-wrap wow fadeInUpX" data-wow-delay="0.1s">
+              <div class="aximo-team-thumb">
+                <img src="assets/images/team/2.jpg" alt>
+              </div>
+              <div class="aximo-team-data">
+             <a href="single-team.html">
+             <h3>Vice Chairman</h3>
+             <p>Wesh</p>
+             </a>
+            </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="aximo-team-wrap wow fadeInUpX" data-wow-delay="0.2s">
+              <div class="aximo-team-thumb">
+                <img src="assets/images/team/8.jpg" alt>
+              </div>
+              <div class="aximo-team-data">
+              <a href="single-team.html">
+             <h3>Secretary General</h3>
+             <p>Martin</p>
+             </a>
+           </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="aximo-team-wrap wow fadeInUpX" data-wow-delay="0.3s">
+              <div class="aximo-team-thumb">
+                <img src="assets/images/team/3.jpg" alt>
+              </div>
+              <div class="aximo-team-data">
+              <a href="single-team.html">
+              <h3>Treasurer</h3>
+              <p>Rose</p>
+              </a>
+            </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="aximo-team-wrap wow fadeInUpX" data-wow-delay="0.4s">
+              <div class="aximo-team-thumb">
+                <img src="assets/images/team/7.jpg" alt>
+              </div>
+              <div class="aximo-team-data">
+               <a href="single-team.html">
+               <h3>Coordinator</h3>
+               <p>Newton</p>
+               </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="aximo-team-wrap wow fadeInUpX" data-wow-delay="0.5s">
+              <div class="aximo-team-thumb">
+                <img src="assets/images/team/1.jpg" alt>
+              </div>
+              <div class="aximo-team-data">
+                <a href="single-team.html">
+                  <h3>Moderator</h3>
+                  <p>Dama</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="aximo-team-wrap wow fadeInUpX" data-wow-delay="0.6s">
+              <div class="aximo-team-thumb">
+                <img src="assets/images/team/5.jpg" alt>
+              </div>
+              <div class="aximo-team-data">
+                <a href="single-team.html">
+                  <h3>Project Manager</h3>
+                  <p>Pastor</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="aximo-team-wrap wow fadeInUpX" data-wow-delay="0.7s">
+              <div class="aximo-team-thumb">
+                <img src="assets/images/team/6.jpg" alt>
+              </div>
+              <div class="aximo-team-data">
+                <a href="single-team.html">
+                  <h3>Head Of Committee</h3>
+                  <p>Patrick</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End section -->
+
+    <!-- Footer  -->
+
+    <footer class="aximo-footer-section2">
+    
+      <div class="container">
+        <div class="aximo-footer-top aximo-section-padding">
+          <div class="row">
+            <div class="col-xl-4 col-lg-12">
+              <div class="aximo-footer-textarea">
+                <a href>
+                  <img src="assets/images/logo/LINDA-LOGO.png" alt>
+                </a>
+                <p>Linda Future Initiative is a youth-led organization in Thika
+                  East, Kenya, empowering communities through mental health
+                  awareness,
+                  education, wellness, environmental action, and civic
+                  engagement</p>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-4">
+              <div class="aximo-footer-menu extar-margin">
+                <div class="aximo-footer-title">
+                  <p>Special Links</p>
+                </div>
+                <ul>
+                  <li><a href>About us</a></li>
+                  <li><a href>Our services</a></li>
+                  <li><a href>Portfolio</a></li>
+                  <li><a href>Blogs</a></li>
+                  <li><a href>Premium member</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-2 col-md-4">
+              <div class="aximo-footer-menu">
+                <div class="aximo-footer-title">
+                  <p>Special Links</p>
+                </div>
+                <ul>
+                  <li><a href>About us</a></li>
+                  <li><a href>Our services</a></li>
+                  <li><a href>Portfolio</a></li>
+                  <li><a href>Blogs</a></li>
+                  <li><a href>Premium member</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-4">
+              <div class="aximo-subscription">
+                <div class="aximo-footer-title">
+                  <p>Special Links</p>
+                </div>
+                <form action="#">
+                  <input type="email" placeholder="Email Address">
+                  <button id="aximo-subscription-btn" type="submit">
+                    <span class="aximo-label-up">Subscribe</span>
+                    <span class="aximo-label-up">Subscribe</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aximo-footer-bottom two">
+          <div class="row">
+            <div class="col-lg-6 order-lg-2">
+              <div class="aximo-social-icon2 right">
+                <ul>
+                  <li>
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=lindafutureyouthgroup@gmail.com"
+                      target="_blank">
+                      <i class="icon-message"></i>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="https://www.facebook.com/share/173Gcfedjq/"
+                      target="_blank">
+                      <i class="icon-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/lindafutureinitiative?igsh=bmt1bDNrazY0aGJm/"
+                      target="_blank">
+                      <i class="icon-instagram"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+              <div class="aximo-copywright two">
+                <p> &copy;2025 Linda Future Initiative. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/menu/menu.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/ScrollSmoother.min.js"></script>
+    <script src="assets/js/skill-bar.js"></script>
+    <script src="assets/js/infinite-slider.js"></script>
+    <script src="assets/js/image-resizing.js"></script>
+    <!-- <script src="assets/js/scrollsmooth.js"></script> -->
+    <script src="assets/js/faq.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/navbar.js"></script>
+
+  </body>
+</html>

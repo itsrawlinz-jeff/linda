@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aximo || Responsive HTML 5 Template</title>
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico"
+      type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!--- End favicon-->
+
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"> -->
+    <!-- End google font  -->
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/custom-font.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/icomoon.css">
+
+    <!-- Code Editor  -->
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/app.min.css">
+  </head>
+
+  <body class="light">
+
+    <div class="aximo-preloader-wrap">
+      <div class="aximo-preloader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <header 
+  id="sticky-menu" 
+  style="display:flex; justify-content:center; padding:15px 0; background:transparent; position:fixed; top:0; left:0; width:100%; z-index:999;"
+>
+  <div 
+    style="
+      width:75%; 
+      background-color:#fdf6e3; 
+      display:flex; 
+      align-items:center; 
+      justify-content:space-between; 
+      padding:10px 25px; 
+      border-radius:8px; 
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    "
+  >
+    <!-- Logo -->
+    <div>
+      <a href="index-02.html" style="display:flex; align-items:center; text-decoration:none;">
+        <img 
+          src="assets/images/logo/LINDA-LOGO.png" 
+          alt="Logo" 
+          style="height:45px; margin-right:10px;"
+        >
+      </a>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul 
+      style="
+        list-style:none; 
+        display:flex; 
+        gap:25px; 
+        margin:0; 
+        padding:0; 
+        font-family:sans-serif; 
+        font-weight:400;
+      "
+    >
+      <li style="position:relative;">
+        <a href="index-02.html" style="text-decoration:none; color:#333;">Home</a>
+      </li>
+
+      <li style="position:relative;">
+        <a href="about-us.html" style="text-decoration:none; color:#333;">About Us</a>
+      </li>
+
+      <!-- Programmes Dropdown -->
+      <li style="position:relative;">
+        <a href="#" style="text-decoration:none; color:#333;">Programmes ▾</a>
+        <ul 
+          style="
+            position:absolute; 
+            top:100%; 
+            left:0; 
+            list-style:none; 
+            margin:0; 
+            padding:10px 0; 
+            background:#fff; 
+            border-radius:6px; 
+            box-shadow:0 2px 6px rgba(0,0,0,0.1); 
+            display:none; 
+            min-width:180px;
+          "
+        >
+          <li><a href="service.html" style="display:block; padding:8px 16px; color:#333; text-decoration:none; font-weight:400;">Programs</a></li>
+          <li><a href="single-service.html" style="display:block; padding:8px 16px; color:#333; text-decoration:none; font-weight:400;">Program Details</a></li>
+        </ul>
+      </li>
+
+      <!-- Blog Dropdown -->
+      <li style="position:relative;">
+        <a href="#" style="text-decoration:none; color:#333;">Blog ▾</a>
+        <ul 
+          style="
+            position:absolute; 
+            top:100%; 
+            left:0; 
+            list-style:none; 
+            margin:0; 
+            padding:10px 0; 
+            background:#fff; 
+            border-radius:6px; 
+            box-shadow:0 2px 6px rgba(0,0,0,0.1); 
+            display:none; 
+            min-width:180px;
+          "
+        >
+          <li><a href="blog.html" style="display:block; padding:8px 16px; color:#333; text-decoration:none; font-weight:400;">Blog</a></li>
+          <li><a href="single-blog.html" style="display:block; padding:8px 16px; color:#333; text-decoration:none; font-weight:400;">Blog Details</a></li>
+        </ul>
+      </li>
+
+      <li style="position:relative;">
+        <a href="contact-us.html" style="text-decoration:none; color:#333;">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Button -->
+    <div>
+      <a 
+        href="contact-us.html" 
+        style="
+          background-color:#e63946; 
+          color:#fff; 
+          padding:8px 16px; 
+          border-radius:20px; 
+          text-decoration:none; 
+          font-weight:400;
+          font-family:sans-serif;
+        "
+      >
+        Contact Us
+      </a>
+    </div>
+  </div>
+
+  <!-- Dropdown Hover Script -->
+  <script>
+    document.querySelectorAll('#sticky-menu li').forEach(li => {
+      const submenu = li.querySelector('ul');
+      if(submenu){
+        li.addEventListener('mouseenter', () => submenu.style.display = 'block');
+        li.addEventListener('mouseleave', () => submenu.style.display = 'none');
+      }
+    });
+  </script>
+</header>
+    <!--End landex-header-section -->
+
+    <div class="aximo-breadcrumb">
+      <div class="container">
+        <h1 class="post__title">Our Blog</h1>
+        <nav class="breadcrumbs">
+          <ul>
+            <li><a href="index-02.html">Home</a></li>
+            <li aria-current="page"> Our Blog</li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+    <!-- End breadcrumb -->
+
+    <div class="section aximo-section-padding2">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="single-post-item wow fadeInUpX" data-wow-delay="0.1s">
+              <div class="post-thumbnail">
+                <img src="assets/images/blog/blog3.png" alt>
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <div class="post-category">
+                    <a href>Marketing</a>
+                  </div>
+                  <div class="post-date">
+                    June 18, 2024
+                  </div>
+                </div>
+                <a href="single-blog.html">
+                  <h3 class="entry-title">
+                    Learn these five high-income skills to build your one-person
+                    business and get rich
+                  </h3>
+                </a>
+                <p>As a first-generation immigrant, money and networks weren’t
+                  given to me. So instead of going through the front door, I
+                  tried a back door approach...</p>
+                <a class="post-read-more" href="single-blog.html">read more <img
+                    src="assets/images/icon/arrow-right.svg" alt></a>
+              </div>
+            </div>
+            <div class="single-post-item wow fadeInUpX" data-wow-delay="0.2s">
+              <div class="post-thumbnail">
+                <img src="assets/images/blog/blog4.png" alt>
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <div class="post-category">
+                    <a href>Business</a>
+                  </div>
+                  <div class="post-date">
+                    June 18, 2024
+                  </div>
+                </div>
+                <a href="single-blog.html">
+                  <h3 class="entry-title">
+                    I run a $10,000/month business with 0 employees, here's how
+                    I use AI tools
+                  </h3>
+                </a>
+                <p>Making more money with the help of AI tools. — Up until now,
+                  I’ve shared two posts discussing the AI tools I’ve
+                  incorporated into my...</p>
+                <a class="post-read-more" href="single-blog.html">read more <img
+                    src="assets/images/icon/arrow-right.svg" alt></a>
+              </div>
+            </div>
+            <div class="single-post-item wow fadeInUpX" data-wow-delay="0.3s">
+              <div class="post-thumbnail">
+                <img src="assets/images/blog/blog5.png" alt>
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <div class="post-category">
+                    <a href>Technology</a>
+                  </div>
+                  <div class="post-date">
+                    June 18, 2024
+                  </div>
+                </div>
+                <a href="single-blog.html">
+                  <h3 class="entry-title">
+                    Technical loan, product loan or business loan: different
+                    types and how to deal withit
+                  </h3>
+                </a>
+                <p>Tech debt part two — a deeper dive into product and business
+                  debt and the ripple effect on organizations — in part
+                  one...</p>
+                <a class="post-read-more" href="single-blog.html">read more <img
+                    src="assets/images/icon/arrow-right.svg" alt></a>
+              </div>
+            </div>
+            <div class="aximo-navigation">
+              <nav class="navigation pagination" aria-label="Posts">
+                <div class="nav-links">
+                  <span aria-current="page"
+                    class="page-numbers current">1</span>
+                  <a class="page-numbers" href>2</a>
+                  <a class="next page-numbers" href>
+                    <img src="assets/images/icon/arrow-right8.svg" alt>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="right-sidebar">
+              <div class="widget">
+                <div class="wp-block-search__inside-wrapper">
+                  <input type="search" placeholder="Type keyword here"
+                    class="wp-block-search__input">
+                  <button id="wp-block-search__button" type="submit">
+                    <img src="assets/images/icon/search.svg" alt>
+                  </button>
+                </div>
+              </div>
+              <div class="widget">
+                <h3 class="wp-block-heading">Categories:</h3>
+                <ul>
+                  <li><a href>Business</a></li>
+                  <li><a href>Development</a></li>
+                  <li><a href>Technology</a></li>
+                  <li><a href>Creative Director</a></li>
+                  <li><a href>Uncategorized</a></li>
+                </ul>
+              </div>
+              <div class="widget aximo_recent_posts_Widget">
+                <h3 class="wp-block-heading">Recent Posts:</h3>
+                <div class="post-item">
+                  <div class="post-thumb">
+                    <a href>
+                      <img src="assets/images/blog/blog1.png" alt>
+                    </a>
+                  </div>
+                  <div class="post-text">
+                    <div class="post-date">
+                      June 18, 2024
+                    </div>
+                    <a class="post-title" href>7 businesses for easy money</a>
+                  </div>
+                </div>
+                <div class="post-item">
+                  <div class="post-thumb">
+                    <a href>
+                      <img src="assets/images/blog/blog2.png" alt>
+                    </a>
+                  </div>
+                  <div class="post-text">
+                    <div class="post-date">
+                      June 18, 2024
+                    </div>
+                    <a class="post-title" href>My 3 tips for business ideas</a>
+                  </div>
+                </div>
+                <div class="post-item">
+                  <div class="post-thumb">
+                    <a href>
+                      <img src="assets/images/blog/blog3.png" alt>
+                    </a>
+                  </div>
+                  <div class="post-text">
+                    <div class="post-date">
+                      June 18, 2024
+                    </div>
+                    <a class="post-title" href>12 Halloween costume ideas</a>
+                  </div>
+                </div>
+              </div>
+              <div class="widget">
+                <h3 class="wp-block-heading">Tags:</h3>
+                <div class="wp-block-tag-cloud">
+                  <a href>Marketing</a>
+                  <a href>Business</a>
+                  <a href>Solutions</a>
+                  <a href>Studio</a>
+                  <a href>Brand</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End section -->
+
+    <!-- Footer  -->
+
+    <footer class="aximo-footer-section2">
+    
+      <div class="container">
+        <div class="aximo-footer-top aximo-section-padding">
+          <div class="row">
+            <div class="col-xl-4 col-lg-12">
+              <div class="aximo-footer-textarea">
+                <a href>
+                  <img src="assets/images/logo/LINDA-LOGO.png" alt>
+                </a>
+                <p>Linda Future Initiative is a youth-led organization in Thika
+                  East, Kenya, empowering communities through mental health
+                  awareness,
+                  education, wellness, environmental action, and civic
+                  engagement</p>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-4">
+              <div class="aximo-footer-menu extar-margin">
+                <div class="aximo-footer-title">
+                  <p>Special Links</p>
+                </div>
+                <ul>
+                  <li><a href>About us</a></li>
+                  <li><a href>Our services</a></li>
+                  <li><a href>Portfolio</a></li>
+                  <li><a href>Blogs</a></li>
+                  <li><a href>Premium member</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-2 col-md-4">
+              <div class="aximo-footer-menu">
+                <div class="aximo-footer-title">
+                  <p>Special Links</p>
+                </div>
+                <ul>
+                  <li><a href>About us</a></li>
+                  <li><a href>Our services</a></li>
+                  <li><a href>Portfolio</a></li>
+                  <li><a href>Blogs</a></li>
+                  <li><a href>Premium member</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-4">
+              <div class="aximo-subscription">
+                <div class="aximo-footer-title">
+                  <p>Special Links</p>
+                </div>
+                <form action="#">
+                  <input type="email" placeholder="Email Address">
+                  <button id="aximo-subscription-btn" type="submit">
+                    <span class="aximo-label-up">Subscribe</span>
+                    <span class="aximo-label-up">Subscribe</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aximo-footer-bottom two">
+          <div class="row">
+            <div class="col-lg-6 order-lg-2">
+              <div class="aximo-social-icon2 right">
+                <ul>
+                  <li>
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=lindafutureyouthgroup@gmail.com"
+                      target="_blank">
+                      <i class="icon-message"></i>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="https://www.facebook.com/share/173Gcfedjq/"
+                      target="_blank">
+                      <i class="icon-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/lindafutureinitiative?igsh=bmt1bDNrazY0aGJm/"
+                      target="_blank">
+                      <i class="icon-instagram"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+              <div class="aximo-copywright two">
+                <p> &copy;2025 Linda Future Initiative. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/menu/menu.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/ScrollSmoother.min.js"></script>
+    <script src="assets/js/skill-bar.js"></script>
+    <script src="assets/js/infinite-slider.js"></script>
+    <script src="assets/js/image-resizing.js"></script>
+    <!-- <script src="assets/js/scrollsmooth.js"></script> -->
+    <script src="assets/js/faq.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
+
+    <script src="assets/js/app.js"></script>
+
+  </body>
+</html>

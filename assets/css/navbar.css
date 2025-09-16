@@ -1,0 +1,289 @@
+/* ===== RESPONSIVE BOOTSTRAP NAVBAR STYLES ===== */
+
+/* Base Navbar Styles */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.navbar {
+  background: rgba(253, 246, 227, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding: 0;
+
+  /* Added flexbox for horizontal layout */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.brand-logo img {
+  width: 160px;
+  height: 70px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.brand-logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation Links */
+.navbar-nav {
+  margin: 0;
+  padding: 0;
+
+  /* Added flexbox for horizontal nav items */
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 5px;
+  display: inline-block;
+}
+
+.navbar-nav .nav-link {
+  color: #333 !important;
+  font-weight: 500;
+  font-family: 'Open Sans', sans-serif;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 16px !important;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #f50404 !important;
+  background: rgba(245, 4, 4, 0.1);
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #f50404;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Donate Button */
+.navbar-actions {
+  margin-left: 20px;
+}
+
+.btn-donate {
+  background: #f50404;
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Open Sans', sans-serif;
+  transition: all 0.3s ease;
+  border: 2px solid #f50404;
+  display: inline-block;
+}
+
+.btn-donate:hover,
+.btn-donate:focus {
+  background: transparent !important;
+  color: #f50404 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 4, 4, 0.3);
+}
+
+/* Mobile Toggler */
+.navbar-toggler {
+  border: none;
+  padding: 8px;
+  background: transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(245, 4, 4, 0.25);
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-image: none !important;
+  width: 24px;
+  height: 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 2px;
+  background: #333;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Mobile Menu Animation */
+.navbar-toggler.collapsed .hamburger-line:nth-child(1) {
+  transform: rotate(0deg) translateY(0);
+}
+
+.navbar-toggler.collapsed .hamburger-line:nth-child(2) {
+  opacity: 1;
+}
+
+.navbar-toggler.collapsed .hamburger-line:nth-child(3) {
+  transform: rotate(0deg) translateY(0);
+}
+
+.navbar-toggler:not(.collapsed) .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler:not(.collapsed) .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler:not(.collapsed) .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Menu Styles */
+.navbar-collapse {
+  background: rgba(253, 246, 227, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-collapse.show {
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Navigation */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 10px 0;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1.1rem;
+    padding: 12px 20px !important;
+    display: block;
+    margin: 5px 0;
+  }
+
+  .navbar-actions {
+    text-align: center;
+    margin: 20px 0 10px;
+    margin-left: 0;
+  }
+
+  .btn-donate {
+    font-size: 1.1rem;
+    padding: 10px 24px;
+  }
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .brand-logo img {
+    width: 140px;
+    height: 60px;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 6px 12px !important;
+    font-size: 0.95rem;
+  }
+
+  .btn-donate {
+    padding: 6px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 576px) {
+  .brand-logo img {
+    width: 120px;
+    height: 50px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 10px 15px !important;
+  }
+
+  .btn-donate {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+
+  .navbar-collapse {
+    padding: 15px 0;
+  }
+}
+
+/* ===== GLASS EFFECT ON SCROLL ===== */
+.navbar.scrolled {
+  background: rgba(253, 246, 227, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== ACCESSIBILITY ===== */
+.navbar-toggler:focus,
+.navbar-nav .nav-link:focus,
+.btn-donate:focus {
+  outline: 2px solid #f50404;
+  outline-offset: 2px;
+}
+
+/* ===== SMOOTH ANIMATIONS ===== */
+.navbar-nav .nav-link,
+.btn-donate,
+.brand-logo img {
+  transition: all 0.3s ease;
+}
