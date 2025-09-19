@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/app.min.css">
-  </head>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
 
   <body class="light">
 
@@ -266,15 +266,34 @@
             </ul>
           </div>
 
-          <div class="mt-5">
-            <a href="#donate" class="aximo-btn">
+          <div class="mt-5" style="text-align: center; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); margin: 20px auto; max-width: 400px;">
+            <a href="javascript:void(0);" class="aximo-btn" onclick="payWithPaystack()" style="background: #fff; color: #333; padding: 15px 30px; border-radius: 25px; text-decoration: none; display: inline-block; font-weight: bold; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)';">
               Donate Now
-              <span><img src="assets/images/icon/arrow-right3.svg" alt></span>
+              <span><img src="assets/images/icon/arrow-right3.svg" alt style="margin-left: 10px;"></span>
             </a>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      function payWithPaystack() {
+        var handler = PaystackPop.setup({
+          key: 'pk_test_fc179017a414af2db6aef540780d3c513a5fe10a', // Public key
+          email: '-lindafutureyouthgroup@gmail.com', 
+          amount: 1000 * 100, // Amount in cents (1000 KES)
+          currency: 'KES',
+          ref: '' + Math.floor((Math.random() * 1000000000) + 1), // Generate a random reference number
+          callback: function(response) {
+            alert('Payment successful. Transaction reference: ' + response.reference);
+            // You can redirect or update UI here after successful payment
+          },
+          onClose: function() {
+            alert('Transaction was not completed, window closed.');
+          }
+        });
+        handler.openIframe();
+      }
+    </script>
 
     <div class="aximo-contact-info-section">
       <div class="container">
@@ -462,5 +481,3 @@
   </body>
 
 </html>
-
-
